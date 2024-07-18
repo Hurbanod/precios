@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precio de Kilobaltio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" 
+    crossorigin="anonymous">
+    <style>
+        .imagen-container {
+            text-align: center;
+            margin-bottom: 10px; /* Espacio entre la imagen y el checkbox */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+           
+        <div class="row">
+            <div class="col-md-6" style="background:#cbe7ff;">
+                <h2 >Endesa libre Verano formidable </h2>
+                
+            </div>
+            <div class="col-md-6" style="background:#cbffdb;">
+                <div class="imagen-container" title="Descuento del 3% por Dualizar">
+                    <h3>Gas Endesa Verano formidable</h3>
+                </div>
+            </div>
+        </div>
+        <br>
+       
+        <div class="row">
+            <div class="col-md-2">
+                <select class="custom-select" id="validationCustom04" required>
+                    <option selected disabled value="">TARIFA DE ACCESO</option>
+                    <option>2.0 TD</option>
+                    <option>3.0 TD</option>
+                  </select>
+            </div>
+            <div class="col-md-4" style="border-right: 2px solid #8ab697;">
+              <h2>‎ ‎ </h2>
+            </div>
+            <div class="col-md-2">
+                <select class="custom-select" id="validationCustom04" required>
+                    <option selected disabled value="">TARIFA DE ACCESO</option>
+                    <option value="RL 1">RL 1</option>
+                    <option >RL 2</option>
+                    <option>RL 3</option>
+                  </select>
+            </div>
+        </div>
+        <br>
+        <div class="row" >
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 10% Luz">
+                    <img src="img/luz.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuento5" class="styled-checkbox" onchange="calcularPrecio()"></label>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 3% por Dualizar">
+                    <img src="img/gas.png" alt="" >
+                    <br>
+                    <label><input type="checkbox" id="descuento2" class="styled-checkbox" onchange="calcularPrecio()"></label>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 2% por factura electronica">
+                    <img src="img/mail.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuento3" class="styled-checkbox" onchange="calcularPrecio()"></label>
+                </div>
+            </div>
+            <div class="col-md-1" title="Descuento del 3% por mantenimiento">
+                <div class="imagen-container">
+                    <img src="img/repair.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuento4" class="styled-checkbox" onchange="calcularPrecio()"></label>
+                </div>
+            </div>
+            <div class="col-md-1" title="Descuento del 10% permanencia 12 meses">
+                <div class="imagen-container">
+                    <img src="img/permanencia.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuento1" class="styled-checkbox" onchange="calcularPrecio()"></label>
+                </div>
+            </div>
+            <div class="col-md-1" title="Descuento del 10% zona catalana" style="border-right: 2px solid #8ab697;">
+                <div class="imagen-container">
+                    <img src="img/catalan.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuento6" class="styled-checkbox" onchange="calcularPrecio()"></label>
+                </div>
+            </div>
+
+            <!-- gas -->
+            
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 10% Luz">
+                    <img src="img/luz.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuentogas1" class="styled-checkbox" onchange="calcularPreciogas()"></label>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 3% por Dualizar">
+                    <img src="img/gas.png" alt="" >
+                    <br>
+                    <label><input type="checkbox" id="descuentogas2" class="styled-checkbox" onchange="calcularPreciogas()"></label>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 10% Luz">
+                    <img src="img/mail.png" alt="">
+                    <br>
+                    <label><input type="checkbox" id="descuentogas3" class="styled-checkbox" onchange="calcularPreciogas()"></label>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="imagen-container" title="Descuento del 3% por Dualizar">
+                    <img src="img/catalan.png" alt="" >
+                    <br>
+                    <label><input type="checkbox" id="descuentogas4" class="styled-checkbox" onchange="calcularPreciogas()"></label>
+                </div>
+            </div>
+            
+
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <span class="">Precio de potencia en punta</span>
+            </div>
+            
+            <div class="col-md-2">
+                <span class="border border-primary rounded-sm"> 0.105 €/día</span>
+            </div>
+            <div class="col-md-1" style="border-right: 2px solid #8ab697;">
+                <span class="border border-primary rounded-sm">0.315 €/mes</span>
+            </div>
+
+            <div class="col-md-2" >
+                <span class="">Termino fijo gas</span>
+            </div>
+            <div class="col-md-2" >
+                <span class="border border-warning rounded-sm">6.50 €/mes</span>
+            </div>
+            <div class="col-md-1" >
+                <span class="border border-warning rounded-sm">0.216 €/día</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <span class="">Precio de potencia en valle</span>
+            </div>
+            
+            <div class="col-md-2">
+                <span class="border border-success rounded-sm"> 0.038 €/día</span>
+            </div>
+            <div class="col-md-1" style="border-right: 2px solid #8ab697;">
+                <span class="border border-success rounded-sm">1.14 ‎ ‎   €/mes </span>
+            </div>
+            <div class="col-md-2">
+                <span class="">Termino variable</span>
+            </div>
+            <div class="col-md-2">
+                <span class="border border-warning rounded-sm">0.0949 €/TE </span>
+            </div>
+            <div class="col-md-1">
+                <p><span class="" id="precioFinalgas">0.0949</span> €/TE</p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <span class="">Precio base de KWH (TE)</span>
+            </div>
+            
+            <div class="col-md-2">
+                <span class="border border-success rounded-sm"> 0.135 €/TE</span>
+            </div>
+            <div class="col-md-2">
+            <p><span class="" id="precioFinal">0.135</span> €/TE</p>
+            </div>
+        </div>
+<br> <br> 
+        <div id="resultado">
+            
+           
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p id="mensajeDescuento" style="display: none; color: green;">Descuento por nueva contratación de luz aplicado.</p>
+            </div>
+            
+            <div class="col-md-6">
+                <p id="mensajeDescuentogas" style="display: none; color: green;">Descuento por nueva contratación de luz aplicado.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="scriptgas.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" 
+    crossorigin="anonymous"></script>
+</body>
+</html>

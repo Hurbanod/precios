@@ -1,0 +1,48 @@
+.styled-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    background-color: rgb(255, 0, 0);
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 20px;
+    font-size: 10px; /* Aumentamos el tamaño de fuente */
+    margin-right: 5px;
+    position: relative; /* Posición relativa para alinear el emoji */
+}
+
+.styled-checkbox:checked {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.styled-checkbox::before {
+    content: '❌'; /* Contenido vacío para el emoji */
+    display: inline-block;
+    position: absolute; /* Posición absoluta para ajustar el emoji */
+    top: 50%; /* Alineación vertical al centro */
+    left: 50%; /* Alineación horizontal al centro */
+    transform: translate(-50%, -50%); /* Centra el emoji */
+}
+
+.styled-checkbox:checked::before {
+    content: '✔'; /* Emoji cuando está marcado */
+}
+
+
+img{
+    width: 23%; /* Reducción del 30% del tamaño original */
+    height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+    display: block; /* Evita el espacio adicional debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+
+   
+}
