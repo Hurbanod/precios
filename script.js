@@ -38,11 +38,11 @@ function calcularPrecio() {
         agregarMensaje('<li class="list-group-item">3%  De descuento sobre el termino de energia durante 1 año por tener el servicio de mantenimiento');
     }
     if (descuento5) {
-        descuentoTotal += 0.10; // Otro 10% de descuento (descuento por nueva contratación de luz)
+        descuentoTotal += 0.10; // Otro 10% de descuento or nueva contratación de luz
         agregarMensaje('<li class="list-group-item">10%  De descuento sobre el termino de energia durante 1 año valido para nuevas contrataciones de luz');
     }
     if (descuento6) {
-        descuentoTotal += 0.10; // 10% de descuento adicional
+        descuentoTotal += 0.10; // 10% de descuento adicional zona catalana
         agregarMensaje('<li class="list-group-item">10%  De descuento sobre el termino de energia durante 1 año por tener luz con endesa en una zona catalana');
     
         actualizarTitulo(' territorial cataluña');
@@ -51,28 +51,22 @@ function calcularPrecio() {
         actualizarTitulo('');
     }
 
-    // Función para actualizar el título h2
     function actualizarTitulo(sufijo) {
         const tituloElement = document.querySelector('h2');
         tituloElement.textContent = `Endesa libre Verano formidable${sufijo}`;
     }
 
-    // Añadir evento de clic a las imágenes para marcar los checkboxes correspondientes
     document.addEventListener('DOMContentLoaded', function() {
         const imgCheckboxes = document.querySelectorAll('.imagen-container img');
         imgCheckboxes.forEach(img => {
             img.addEventListener('click', function() {
                 const checkbox = this.nextElementSibling.querySelector('input[type="checkbox"]');
-                checkbox.checked = !checkbox.checked; // Invertir el estado del checkbox al hacer clic en la imagen
-                calcularPrecio(); // Recalcular el precio al cambiar el estado del checkbox
+                checkbox.checked = !checkbox.checked; 
+                calcularPrecio(); 
             });
         });
     });
-
-    // Calcular el precio final
     const precioFinal = precioBase * (1 - descuentoTotal);
-
-    // Mostrar el resultado en la página
     const resultadoElement = document.getElementById('precioFinal');
     resultadoElement.textContent = precioFinal.toFixed(4); // Mostrar el precio final con 4 decimales
 }
