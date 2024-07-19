@@ -44,5 +44,10 @@ img{
     display: block; /* Evita el espacio adicional debajo de la imagen */
     margin: 0 auto; /* Centra la imagen horizontalmente */
 
-   
+}
+
+
+.ofertascapm::hover{
+   backgorund: #89C4C6;
+    
 }
