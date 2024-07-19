@@ -44,18 +44,14 @@ function calcularPrecio() {
     if (descuento6) {
         descuentoTotal += 0.10; // 10% de descuento adicional zona catalana
         agregarMensaje('<li class="list-group-item">10%  De descuento sobre el termino de energia durante 1 año por tener luz con endesa en una zona catalana');
-    
         actualizarTitulo(' territorial cataluña');
     } else {
-        
         actualizarTitulo('');
     }
-
     function actualizarTitulo(sufijo) {
         const tituloElement = document.querySelector('h2');
         tituloElement.textContent = `Endesa libre Verano formidable${sufijo}`;
     }
-
     document.addEventListener('DOMContentLoaded', function() {
         const imgCheckboxes = document.querySelectorAll('.imagen-container img');
         imgCheckboxes.forEach(img => {
@@ -70,5 +66,3 @@ function calcularPrecio() {
     const resultadoElement = document.getElementById('precioFinal');
     resultadoElement.textContent = precioFinal.toFixed(4); // Mostrar el precio final con 4 decimales
 }
-
-
