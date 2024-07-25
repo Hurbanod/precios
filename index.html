@@ -227,14 +227,16 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Mantenimientos</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Mantenimientos luz</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <button style="border-radius:4px; background: #6bcbff; border-color:#0781c3">Aire completo</button>
-        <button style="border-radius:4px; background: #d3ff85; border-color:#8fd316">Proteccion 360 plus</button>
+        <button id="btnAireCompleto" style="border-radius:4px; background: #6bcbff; border-color:#0781c3">Aire completo</button>
+        <button id="btnProteccion360" style="border-radius:4px; background: #d3ff85; border-color:#8fd316">Proteccion 360 plus</button>
+        <br>
+        <div id="mensaje" class="mensaje"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -242,6 +244,28 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Obtener referencias a los elementos del DOM
+  var btnAireCompleto = document.getElementById('btnAireCompleto');
+  var btnProteccion360 = document.getElementById('btnProteccion360');
+  var mensaje = document.getElementById('mensaje');
+
+  // Función para mostrar el mensaje correspondiente
+  function mostrarMensaje(mensajeTexto) {
+    mensaje.textContent = mensajeTexto;
+  }
+
+  // Event listeners para los botones
+  btnAireCompleto.addEventListener('click', function() {
+    mostrarMensaje('Aire');
+  });
+
+  btnProteccion360.addEventListener('click', function() {
+    mostrarMensaje('Adios');
+  });
+</script>
+    
 
     <script src="script.js"></script>
     <script src="scriptgas.js"></script>
