@@ -22,8 +22,8 @@ function calcularPrecio() {
         mostrarMensajes();
     }
     if (descuento1) {
-        descuentoTotal += 0.10; // 10% de descuento
-        agregarMensaje('<li class="list-group-item">10%  De descuento sobre el termino de energia durante 1 año por tener permanencia de 12 meses con endesa');
+        descuentoTotal += 0.20; //20% de descuento
+        agregarMensaje('<li class="list-group-item">10%  De descuento sobre el termino de energia durante 1 año por tener permanencia de 12 meses con endesa<br></br><li class="list-group-item">10%  De descuento sobre el termino de energia durante 1 año por contratar la tarifa premium de endesa');
     }
     if (descuento2) {
         descuentoTotal += 0.03; // 3% de descuento
