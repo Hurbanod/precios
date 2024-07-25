@@ -17,7 +17,6 @@
 </head>
 <body>
     <div class="container-fluid">
-
       <div class="row">
             <div class="col-md-3" style="background:#D6FEFF;">
                 <a href="express.html"> <button class="ofertascapm" style="border-radius:4px; background:#cbe7ff; border:0px;">Tu Luz</button></a>
@@ -33,11 +32,9 @@
                 </div>
             </div>
         </div>
-           
         <div class="row">
             <div class="col-md-6" style="background:#cbe7ff;">
                 <h2 >Endesa libre Verano formidable</h2>
-                
             </div>
             <div class="col-md-6" style="background:#cbffdb;">
                 <div class="imagen-container" title="Descuento del 3% por Dualizar">
@@ -46,7 +43,6 @@
             </div>
         </div>
         <br>
-       
         <div class="row">
             <div class="col-md-2">
                 <select class="custom-select" id="validationCustom04" required>
@@ -111,9 +107,7 @@
                     <label><input type="checkbox" id="descuento6" class="styled-checkbox" onchange="calcularPrecio()"></label>
                 </div>
             </div>
-
             <!-- gas -->
-            
             <div class="col-md-1">
                 <div class="imagen-container" title="Descuento del 10% Luz">
                     <img src="img/luz.png" alt="">
@@ -142,23 +136,18 @@
                     <label><input type="checkbox" id="descuentogas4" class="styled-checkbox" onchange="calcularPreciogas()"></label>
                 </div>
             </div>
-            
-
-
         </div>
         <br>
         <div class="row">
             <div class="col-md-3">
                 <span class="">Precio de potencia en punta</span>
             </div>
-            
             <div class="col-md-2">
                 <span class="border border-primary rounded-sm"> 0.105 €/día</span>
             </div>
             <div class="col-md-1" style="border-right: 2px solid #8ab697;">
                 <span class="border border-primary rounded-sm">0.315 €/mes</span>
             </div>
-
             <div class="col-md-2" >
                 <span class="">Termino fijo gas</span>
             </div>
@@ -174,7 +163,6 @@
             <div class="col-md-3">
                 <span class="">Precio de potencia en valle</span>
             </div>
-            
             <div class="col-md-2">
                 <span class="border border-success rounded-sm"> 0.038 €/día</span>
             </div>
@@ -196,7 +184,6 @@
             <div class="col-md-3">
                 <span class="">Precio base de KWH (TE)</span>
             </div>
-            
             <div class="col-md-2">
                 <span class="border border-success rounded-sm"> 0.135 €/TE</span>
             </div>
@@ -206,9 +193,6 @@
         </div>
 <br> <br> 
         <div id="resultado">
-            
-           
-
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -220,9 +204,6 @@
             </div>
         </div>
     </div>
-
-
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -244,33 +225,22 @@
     </div>
   </div>
 </div>
-
 <script>
-  // Obtener referencias a los elementos del DOM
   var btnAireCompleto = document.getElementById('btnAireCompleto');
   var btnProteccion360 = document.getElementById('btnProteccion360');
   var mensaje = document.getElementById('mensaje');
-
-
-  // Función para mostrar el mensaje correspondiente con HTML
   function mostrarMensaje(mensajeHTML) {
     mensaje.innerHTML = mensajeHTML;
   }
-  // Event listeners para los botones
   btnAireCompleto.addEventListener('click', function() {
     mostrarMensaje('<br>Ademàs va a contratar el servicio de mantenimiento aire completo que incluye una revisiòn periodica anual del aire acondicionado, para que las instalaciones este en optimas condiciones, ademas si tienes una averìa de aire acondicionando puedes ponerte en contacto con nuestro servicio tècnico en el telèfono gratuito 900-85-86-85. El desplazamiento y las 3 primeras horas de mano de obra son con completamente gratis en caso de necesitar mas de 3h de mano de obra o si es necesario cambiar alguna pieza el tècnico proporcionarà un un presupuesto sin ningun conpromiso.<br><br><div style="border-radius:4px; border-color:blue">Precio base: 7,44 €</div><br><div>Precio final: 6,69 €</div><br><div>10% de descuento durante 1 año</div>');
   });
-
   btnProteccion360.addEventListener('click', function() {
     mostrarMensaje('Adios');
   });
 </script>
-    
-
     <script src="script.js"></script>
     <script src="scriptgas.js"></script>
-
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
     crossorigin="anonymous"></script>
